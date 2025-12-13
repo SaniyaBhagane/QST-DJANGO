@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Testapp.Forms import StudentForm
+from Testapp.Forms import StudentForm, AdvancedStudentForm
 
 def sfview(request):
     form = StudentForm()
@@ -19,3 +19,14 @@ def sfview(request):
             })
 
     return render(request, 'testapp/StudentForm.html', {'form': form})
+
+
+def myview(request):
+    if request.method == 'POST':
+        form = AdvancedStudentForm(request.POST, request.FILES)
+        if form.is_valid():
+            print("VALID:", form.cleaned_data)
+    else:
+        form = AdvancedStudentForm()
+
+    return render(request, 'testapp/AdvForm.html', {'form': form})

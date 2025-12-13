@@ -21,4 +21,5 @@ import Testapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sf/',Testapp.views.sfview,name='sfview'),
+    path('my/',Testapp.views.myview,name='myview'),
 ]

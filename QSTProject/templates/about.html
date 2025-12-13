@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% extends "home.html" %}
+{% load static %}
+
+{% block titleblock %}
+<title>About Page title</title>
+{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block headings %}
+    <h1>Hello about page</h1>
+    <h2>this is 2nd page</h2>
+    {% endblock %}
+
+    {% block imageblock %}
+    <img src="{% static 'images/Virat-Kohli.webp' %}" alt="">
+    {% endblock %}
+</body>
+</html>

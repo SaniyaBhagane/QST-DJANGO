@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block titleblock %}
+    <title>Document</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% block headings %}
+        <h1>Welcome to django templates </h1>
+        <h2>This is second hero of django</h2>
+    {% endblock %}
+
+    {% block imageblock %}
+        <img src="{%static 'images/soham.jpg'%}">
+    {% endblock %}
+    
+        <a href="/about">Click here</a>
+</body>
+</html>

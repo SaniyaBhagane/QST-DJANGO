@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h2>STUDENT FORM</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if sid %}
+        <h3>Submitted Data</h3>
+        <p>ID: {{ sid }}</p>
+        <p>Name: {{ sname }}</p>
+        <p>Age: {{ sage }}</p>
+    {% endif %}
+</body>
+</html>

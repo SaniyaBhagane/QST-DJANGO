@@ -7,16 +7,16 @@
     <h2>STUDENT FORM</h2>
 
     <form method="post">
-        {% csrf_token %}
         {{ form.as_p }}
+        {% csrf_token %}
         <input type="submit" value="Submit">
     </form>
 
     {% if sid %}
         <h3>Submitted Data</h3>
-        <p>ID: {{ sid }}</p>
-        <p>Name: {{ sname }}</p>
-        <p>Age: {{ sage }}</p>
+        <p>Student ID: {{ sid }}</p>
+        <p>Student Name: {{ sname }}</p>
+        <p>Student Age: {{ sage }}</p>
     {% endif %}
 </body>
 </html>

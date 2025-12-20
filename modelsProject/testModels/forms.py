@@ -8,5 +8,9 @@ class StudentForm(forms.ModelForm):
         fields = '__all__'
         
         widget={
-            'enrollment_date': forms.DateInput(attrs={'type':'date'})
+            'enrollment_date': forms.DateInput(attrs={'type':'date','placeholder':'Select a date'}),
+            'first_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Enter First Name'}),
+            'last_name': forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Last Name'}),
+            'enrollment_number': forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Enrollment Number'}),
+            'major': forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Major'}),
         }

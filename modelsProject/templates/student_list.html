@@ -18,12 +18,16 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Enrollment Date</th>
+            <th>Enrollment No</th>
+            <th>Major</th>
         </tr>
         {% for student in students %}
         <tr>
             <td>{{ student.first_name }}</td>
             <td>{{ student.last_name }}</td>
             <td>{{ student.enrollment_date }}</td>
+            <td>{{ student.enrollment_number }}</td>
+            <td>{{ student.major }}</td>
         </tr>
         {% endfor %}
 </body>

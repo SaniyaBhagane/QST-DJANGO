@@ -6,3 +6,8 @@ class StudentForm(forms.ModelForm):
         model = Student
         # fields = ['first_name', 'last_name', 'enrollment_date']
         fields = '__all__'
+        
+        widget={
+            'enrollment_date': forms.DateInput(attrs={'type':'date'})
+            
+        }

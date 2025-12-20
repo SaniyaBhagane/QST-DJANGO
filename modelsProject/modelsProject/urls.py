@@ -22,4 +22,5 @@ from testModels import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', views.student_list, name='student_list'),
+    path('form/', views.form_view, name='student_form'),
 ]

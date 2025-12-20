@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Student Registration From</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
 </body>
 </html>

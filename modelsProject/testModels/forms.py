@@ -9,5 +9,4 @@ class StudentForm(forms.ModelForm):
         
         widget={
             'enrollment_date': forms.DateInput(attrs={'type':'date'})
-            
         }

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Detail</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Details</h2>
+
+    <p><strong>First Name:</strong> {{ student.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ student.last_name }}</p>
+    <p><strong>Enrollment Date:</strong> {{ student.enrollment_date }}</p>
+    <p><strong>Enrollment Number:</strong> {{ student.enrollment_number }}</p>
+    <p><strong>Major:</strong> {{ student.major }}</p>
+
+    <hr>
+
+    <a href="/list/">⬅ Back to List</a><br><br>
+    <a href="/">➕ Add New Student</a>
+</div>
+
+</body>
+</html>

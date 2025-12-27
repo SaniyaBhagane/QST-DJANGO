@@ -1,18 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <form action="">
-        <h2>Student Form</h2>
+
+<div class="container">
+    <h2>Add Student</h2>
+
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="ADD">
-
+        <input type="submit" value="Add Student">
     </form>
-    
+</div>
+
 </body>
 </html>

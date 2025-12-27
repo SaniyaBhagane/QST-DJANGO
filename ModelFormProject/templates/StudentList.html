@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Student List</h2>
+
+    <ul style="list-style: none;">
+        {% for student in students %}
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                <a href="{% url 'student-detail' student.id %}">
+                    {{ student.first_name }} {{ student.last_name }}
+                </a>
+            </li>
+        {% empty %}
+            <p>No students available</p>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <a href="/">➕ Add New Student</a>
+</div>
+
+</body>
+</html>

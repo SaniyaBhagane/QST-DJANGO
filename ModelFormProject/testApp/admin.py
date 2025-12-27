@@ -3,4 +3,8 @@ from testApp.models import Student
 
 # saniya@1234
 # Register your models here.
-admin.site.register(Student)
+
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'last_name', 'enrollment_date', 'enrollment_number']
+
+admin.site.register(Student, StudentAdmin)

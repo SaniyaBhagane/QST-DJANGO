@@ -25,4 +25,6 @@ urlpatterns = [
     path('', views.from_view, name='student-form'),
     path('list/', views.student_list, name='student-list'),
     path('detail/<int:pk>/', views.student_detail, name='student-detail'),
+    path('update/<int:pk>/', views.student_update, name='student-update'),
+    path('delete/<int:pk>/', views.student_delete, name='student-delete'),
 ] 

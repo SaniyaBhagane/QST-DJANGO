@@ -1,13 +1,61 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Detail</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #020617;
+            width: 420px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 6px;
+        }
+
+        strong {
+            color: #94a3b8;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 12px;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #0ea5e9;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
     <h2>Student Details</h2>
 
     <p><strong>First Name:</strong> {{ student.first_name }}</p>
@@ -16,9 +64,7 @@
     <p><strong>Enrollment Number:</strong> {{ student.enrollment_number }}</p>
     <p><strong>Major:</strong> {{ student.major }}</p>
 
-    <hr>
-
-    <a href="/list/">⬅ Back to List</a><br><br>
+    <a href="/list/">⬅ Back to List</a><br>
     <a href="/">➕ Add New Student</a>
 </div>
 

@@ -1,29 +1,95 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Student List</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #020617;
+            width: 420px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #020617;
+            border: 1px solid #1e293b;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #020617;
+            border-color: #38bdf8;
+            transform: translateX(5px);
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .add-btn {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: #38bdf8;
+            color: #020617;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .add-btn:hover {
+            background-color: #0ea5e9;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
     <h2>Student List</h2>
 
-    <ul style="list-style: none;">
+    <ul>
         {% for student in students %}
-            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+            <li>
                 <a href="{% url 'student-detail' student.id %}">
                     {{ student.first_name }} {{ student.last_name }}
                 </a>
             </li>
         {% empty %}
-            <p>No students available</p>
+            <li>No students found</li>
         {% endfor %}
     </ul>
 
-    <hr>
-    <a href="/">➕ Add New Student</a>
+    <a href="/" class="add-btn">➕ Add New Student</a>
 </div>
 
 </body>

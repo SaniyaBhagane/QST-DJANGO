@@ -1,13 +1,65 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Form</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #020617;
+            width: 420px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            background-color: #020617;
+            border: 1px solid #1e293b;
+            color: #e5e7eb;
+            border-radius: 6px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+
+        input[type="submit"] {
+            background-color: #38bdf8;
+            color: #020617;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0ea5e9;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
     <h2>Add Student</h2>
 
     <form method="POST">

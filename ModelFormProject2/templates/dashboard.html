@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Dashboard</title>
+</head>
+<body>
+    <h1>User Profile Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Pic</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Skills</th>
+            <th>Actions</th>
+        </tr>
+        {% for profile in profiles %}
+        <tr>
+            <td><img src="{{ profile.pic.url }}" alt="{{ profile.name }}" ></td>
+            <td>{{ profile.name }}</td>
+            <td>{{ profile.gender }}</td>
+            <td>{{ profile.skills }}</td>
+            <td>
+                <a href="{% url 'view-profile' profile.id %}"></a>
+                <a href="{% url 'edit-profile' profile.id %}">Edit</a> |
+                <a href="{% url 'delete-profile' profile.id %}">Delete</a>  
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

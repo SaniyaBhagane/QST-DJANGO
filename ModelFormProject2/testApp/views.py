@@ -20,4 +20,7 @@ def add_user(request):
         form = UserProfileForm()
     return render(request, 'add_user.html', {'form': form})
 
-# Edit User Profile
+# View User Profile
+def view_user(request, pk):
+    user = get_list_or_404(UserProfile, id=pk)
+    return render(request, 'view_user.html', {'user': user})

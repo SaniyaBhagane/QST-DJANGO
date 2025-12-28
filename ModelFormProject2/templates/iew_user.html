@@ -1,0 +1,23 @@
+{% extends "base/layout.html" %}
+{% block title %}View User{% endblock %}
+
+{% block content %}
+<div class="card p-4 mx-auto" style="max-width: 600px;">
+    <h3 class="text-info mb-3">User Profile Details</h3>
+
+    <div class="text-center mb-4">
+        <img src="{{ profile.pic.url }}" class="rounded-circle mx-auto mb-3" width="100">
+        <p><strong>Username:</strong> {{ profile.username }}</p>
+        <p><strong>Email:</strong> {{ profile.email }} </p>
+        <p><strong>Gender:</strong> {{ profile.gender }}</p>
+        <p><strong>Skills:</strong> {{ profile.skills }}</p>
+
+        <div class="d-flex gap-2 mt-3">
+            <a href="{% url 'edit-profile' profile.id %}" class="btn btn-primary">Edit Profile</a>
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+            <a href="{% url 'delete-user '%}" class="btn btn-danger"></a>
+
+        </div>
+    </div>
+
+    {% endblock %}

@@ -24,5 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.dashboard, name='dashboard'),
     path('add/', views.add_user, name='add-user'),
+    path('view/<int:pk>/', views.view_user, name='view-user'),
+    
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

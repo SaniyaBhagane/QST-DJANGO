@@ -24,3 +24,15 @@ def add_user(request):
 def view_user(request, pk):
     user = get_list_or_404(UserProfile, id=pk)
     return render(request, 'view_user.html', {'user': user})
+
+# Update User Profile
+def update_user(request, pk):
+    user = get_list_or_404(UserProfile, id=pk)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+        else:
+            form = UserProfileForm(instance=user)
+        return render(request, 'update_user.html', {'form': form})

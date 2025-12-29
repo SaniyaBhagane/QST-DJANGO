@@ -1,14 +1,23 @@
+# models.py
 from django.db import models
 
-# Create your models here.
-# saniya1234
+
 
 class UserProfile(models.Model):
-    
+
     GENDER_CHOICES = (
         ('Male', 'Male'),
         ('Female', 'Female'),
         ('Other', 'Other'),
+    )
+
+    SKILL_CHOICES = (
+        ('Python', 'Python'),
+        ('Django', 'Django'),
+        ('HTML', 'HTML'),
+        ('CSS', 'CSS'),
+        ('JavaScript', 'JavaScript'),
+        ('React', 'React'),
     )
 
     username = models.CharField(max_length=150, unique=True)

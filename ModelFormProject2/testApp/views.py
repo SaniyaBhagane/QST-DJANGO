@@ -36,3 +36,11 @@ def update_user(request, pk):
         else:
             form = UserProfileForm(instance=user)
         return render(request, 'update_user.html', {'form': form})
+    
+# Delete User Profile
+def delete_user(request, pk):
+    user = get_list_or_404(UserProfile, id=pk)
+    if request.method == 'POST':
+        user.delete()
+        return redirect('dashboard')
+    return render(request, 'delete_user.html', {'user': user})

@@ -3,13 +3,15 @@ from .forms import UserProfileForm
 from .models import UserProfile
 
 
-# Create your views here.
-# Dashboard
+# ---------------- DASHBOARD ----------------
 def dashboard(request):
     profiles = UserProfile.objects.all()
-    return render(request, 'dashboard.html', {'profiles': profiles})
+    return render(request, 'dashboard.html', {
+        'profiles': profiles
+    })
 
-# Add User Profile
+
+# ---------------- ADD USER ----------------
 def add_user(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES)
@@ -18,29 +20,46 @@ def add_user(request):
             return redirect('dashboard')
     else:
         form = UserProfileForm()
-    return render(request, 'add_user.html', {'form': form})
 
-# View User Profile
+    return render(request, 'add_user.html', {
+        'form': form
+    })
+
+
+# ---------------- VIEW USER ----------------
 def view_user(request, pk):
     user = get_object_or_404(UserProfile, id=pk)
-    return render(request, 'view_user.html', {'user': user})
+    return render(request, 'view_user.html', {
+        'user': user
+    })
 
-# Update User Profile
+
+# ---------------- UPDATE USER ----------------
 def update_user(request, pk):
     user = get_object_or_404(UserProfile, id=pk)
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('dashboard')
-        else:
-            form = UserProfileForm(instance=user)
-        return render(request, 'update_user.html', {'form': form})
-    
-# Delete User Profile
+    else:
+        form = UserProfileForm(instance=user)
+
+    return render(request, 'update_user.html', {
+        'form': form,
+        'user': user
+    })
+
+
+# ---------------- DELETE USER ----------------
 def delete_user(request, pk):
     user = get_object_or_404(UserProfile, id=pk)
+
     if request.method == 'POST':
         user.delete()
         return redirect('dashboard')
-    return render(request, 'delete_user.html', {'user': user})
+
+    return render(request, 'delete_user.html', {
+        'user': user
+    })

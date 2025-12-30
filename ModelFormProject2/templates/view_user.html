@@ -1,29 +1,52 @@
 {% extends "base/layout.html" %}
-{% block title %}View User{% endblock %}
+{% block title %}View Profile{% endblock %}
 
 {% block content %}
-<div class="card p-4 mx-auto" style="max-width: 600px;">
-    <h3 class="text-info mb-3 text-center">User Profile Details</h3>
 
-    <div class="text-center mb-4">
-        {% if profile.profile_picture %}
-        <img src="{{ profile.profile_picture.url }}" class="profile-img mb-3">
-        {% endif %}
+<div class="profile-glass-card">
 
-        <p><strong>Username:</strong> {{ profile.username }}</p>
-        <p><strong>Email:</strong> {{ profile.email }}</p>
-        <p><strong>Gender:</strong> {{ profile.gender }}</p>
+    <h2 class="neon-title">User Profile Details</h2>
 
-        <p><strong>Skills:</strong></p>
-        {% for skill in profile.skills_list %}
-            <span class="badge bg-info text-dark me-1">{{ skill }}</span>
-        {% endfor %}
+    <!-- PROFILE IMAGE -->
+    <div class="profile-img-wrapper mb-3 ">
+        <img src="{{ profile.profile_picture.url }}" alt="profile">
+    </div>
 
-        <div class="d-flex justify-content-center gap-2 mt-4">
-            <a href="{% url 'update-user' profile.pk %}" class="btn btn-warning">Update</a>
-            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
+    <!-- USER INFO -->
+    <div class="profile-info">
+        <p><span>Username:</span> {{ profile.username }}</p>
+        <p><span>Email:</span> {{ profile.email }}</p>
+        <p><span>Gender:</span> {{ profile.gender }}</p>
+        <p><span>Date of Birth:</span> {{ profile.date_of_birth }}</p>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section">
+        <h4>About</h4>
+        <p>{{ profile.about }}</p>
+    </div>
+
+
+    <!-- SKILLS -->
+    <div class="skills-section">
+        <h4> Skills</h4>
+        <div class="skills-wrapper center p-2">
+            {% for skill in profile.skills_list %}
+                <span class="badge bg-info text-dark me-2 mb-2">
+                    {{ skill }}                        
+                </span>
+            {% empty %}
+                <span class="text-muted">No skills</span>
+            {% endfor %}
         </div>
     </div>
+
+    <!-- BUTTONS -->
+    <div class="profile-actions">
+        <a href="{% url 'update-user' profile.pk %}" class="btn btn-primary m-2">Update</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-warning m-2">Back</a>
+    </div>
+
 </div>
+
 {% endblock %}
-    

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserProfileForm
 from .models import UserProfile
 
@@ -22,12 +22,12 @@ def add_user(request):
 
 # View User Profile
 def view_user(request, pk):
-    user = get_list_or_404(UserProfile, id=pk)
+    user = get_object_or_404(UserProfile, id=pk)
     return render(request, 'view_user.html', {'user': user})
 
 # Update User Profile
 def update_user(request, pk):
-    user = get_list_or_404(UserProfile, id=pk)
+    user = get_object_or_404(UserProfile, id=pk)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
@@ -39,7 +39,7 @@ def update_user(request, pk):
     
 # Delete User Profile
 def delete_user(request, pk):
-    user = get_list_or_404(UserProfile, id=pk)
+    user = get_object_or_404(UserProfile, id=pk)
     if request.method == 'POST':
         user.delete()
         return redirect('dashboard')

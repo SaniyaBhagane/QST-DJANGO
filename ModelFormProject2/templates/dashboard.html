@@ -21,9 +21,9 @@
             <td>{{ profile.gender }}</td>
             <td>{{ profile.skills }}</td>
             <td>
-                <a href="{% url 'view-profile' profile.id %}"></a>
-                <a href="{% url 'edit-profile' profile.id %}">Edit</a> |
-                <a href="{% url 'delete-profile' profile.id %}">Delete</a>  
+                <a href="{% url 'view-user' profile.id %}"></a>
+                <a href="{% url 'update-user' profile.id %}">Edit</a> |
+                <a href="{% url 'delete-user' profile.id %}">Delete</a>  
             </td>
         </tr>
         {% endfor %}

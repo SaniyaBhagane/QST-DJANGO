@@ -2,12 +2,6 @@ from django import forms
 from .models import UserProfile
 
 class UserProfileForm(forms.ModelForm):
-
-    skills = forms.MultipleChoiceField(
-        choices=UserProfile.SKILL_CHOICES,
-        widget=forms.CheckboxSelectMultiple
-    )
-
     class Meta:
         model = UserProfile
         fields = "__all__"

@@ -11,14 +11,6 @@ class UserProfile(models.Model):
         ('Other', 'Other'),
     )
 
-    SKILL_CHOICES = (
-        ('Python', 'Python'),
-        ('Django', 'Django'),
-        ('HTML', 'HTML'),
-        ('CSS', 'CSS'),
-        ('JavaScript', 'JavaScript'),
-        ('React', 'React'),
-    )
 
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(unique=True)

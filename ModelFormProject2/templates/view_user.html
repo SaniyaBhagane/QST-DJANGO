@@ -3,21 +3,27 @@
 
 {% block content %}
 <div class="card p-4 mx-auto" style="max-width: 600px;">
-    <h3 class="text-info mb-3">User Profile Details</h3>
+    <h3 class="text-info mb-3 text-center">User Profile Details</h3>
 
     <div class="text-center mb-4">
-        <img src="{{ profile.pic.url }}" class="rounded-circle mx-auto mb-3" width="100">
+        {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" class="profile-img mb-3">
+        {% endif %}
+
         <p><strong>Username:</strong> {{ profile.username }}</p>
-        <p><strong>Email:</strong> {{ profile.email }} </p>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
         <p><strong>Gender:</strong> {{ profile.gender }}</p>
-        <p><strong>Skills:</strong> {{ profile.skills }}</p>
 
-        <div class="d-flex gap-2 mt-3">
-            <a href="{% url 'edit-profile' profile.id %}" class="btn btn-primary">Edit Profile</a>
-            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
-            <a href="{% url 'delete-user '%}" class="btn btn-danger"></a>
+        <p><strong>Skills:</strong></p>
+        {% for skill in profile.skills_list %}
+            <span class="badge bg-info text-dark me-1">{{ skill }}</span>
+        {% endfor %}
 
+        <div class="d-flex justify-content-center gap-2 mt-4">
+            <a href="{% url 'update-user' profile.pk %}" class="btn btn-warning">Update</a>
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
         </div>
     </div>
-
-    {% endblock %}
+</div>
+{% endblock %}
+    

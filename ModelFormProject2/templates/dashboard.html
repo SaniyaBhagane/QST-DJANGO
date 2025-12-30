@@ -1,5 +1,4 @@
 {% extends "base/layout.html" %}
-
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
@@ -21,39 +20,31 @@
             <tbody>
                 {% for profile in profiles %}
                 <tr>
-                    <!-- PROFILE IMAGE -->
                     <td>
                         {% if profile.profile_picture %}
-                        <img 
-                            src="{{ profile.profile_picture.url }}" 
-                            class="profile-img"
-                            alt="profile"
-                        >
+                        <img src="{{ profile.profile_picture.url }}" class="profile-img">
                         {% else %}
                         <span class="text-muted">No Image</span>
                         {% endif %}
                     </td>
 
-                    <!-- NAME -->
                     <td>{{ profile.username }}</td>
-
-                    <!-- GENDER -->
                     <td>{{ profile.gender }}</td>
 
-                    <!-- SKILLS -->
                     <td>
-                        {% for skill in profile.skills.split(',') %}
-                            <span class="badge bg-info text-dark me-1">
-                                {{ skill|trim }}
+                        {% for skill in profile.skills_list %}
+                            <span class="badge bg-info text-dark me-1 mb-1">
+                                {{ skill }}
                             </span>
+                        {% empty %}
+                            <span class="text-muted">No skills</span>
                         {% endfor %}
                     </td>
 
-                    <!-- ACTIONS -->
                     <td>
-                        <a href="{% url 'view-user' profile.id %}" class="btn btn-sm btn-outline-info">View</a>
-                        <a href="{% url 'update-user' profile.id %}" class="btn btn-sm btn-outline-warning">Edit</a>
-                        <a href="{% url 'delete-user' profile.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        <a href="{% url 'view-user' profile.pk %}" class="btn btn-sm btn-outline-info">View</a>
+                        <a href="{% url 'update-user' profile.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
+                        <a href="{% url 'delete-user' profile.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
                     </td>
                 </tr>
                 {% empty %}

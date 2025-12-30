@@ -28,38 +28,38 @@ def add_user(request):
 
 # ---------------- VIEW USER ----------------
 def view_user(request, pk):
-    user = get_object_or_404(UserProfile, id=pk)
+    profile = get_object_or_404(UserProfile, pk=pk)
     return render(request, 'view_user.html', {
-        'user': user
+        'profile': profile
     })
 
 
 # ---------------- UPDATE USER ----------------
 def update_user(request, pk):
-    user = get_object_or_404(UserProfile, id=pk)
+    profile = get_object_or_404(UserProfile, pk=pk)
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=user)
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
             return redirect('dashboard')
     else:
-        form = UserProfileForm(instance=user)
+        form = UserProfileForm(instance=profile)
 
     return render(request, 'update_user.html', {
         'form': form,
-        'user': user
+        'profile': profile
     })
 
 
 # ---------------- DELETE USER ----------------
 def delete_user(request, pk):
-    user = get_object_or_404(UserProfile, id=pk)
+    profile = get_object_or_404(UserProfile, pk=pk)
 
     if request.method == 'POST':
-        user.delete()
+        profile.delete()
         return redirect('dashboard')
 
     return render(request, 'delete_user.html', {
-        'user': user
+        'profile': profile
     })

@@ -28,3 +28,4 @@ urlpatterns = [
     path('update/<int:pk>/', views.update_user, name='update-user'),
     path('delete/<int:pk>/', views.delete_user, name='delete-user'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

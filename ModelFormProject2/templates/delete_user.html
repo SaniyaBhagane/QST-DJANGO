@@ -7,13 +7,15 @@
   <div class="card p-4 mx-auto text-center" style="max-width: 420px;">
 
     <h2 class="mb-4">Delete User</h2>
-    
+
     <p>Are you sure you want to delete the user: <strong>{{ profile.username }}</strong>?</p>
+
     <form method="post">
       {% csrf_token %}
       <button type="submit" class="btn btn-danger w-100">Yes, Delete</button>
       <a href="{% url 'dashboard' %}" class="btn btn-secondary w-100 mt-2">Cancel</a>
     </form>
+    
     </div>
 
 {% endblock %}

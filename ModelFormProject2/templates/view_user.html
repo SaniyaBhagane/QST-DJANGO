@@ -2,6 +2,7 @@
 {% block title %}View Profile{% endblock %}
 
 {% block content %}
+
 <div class="profile-glass-card">
     <h2 class="neon-title">User Profile Details</h2>
 
@@ -44,5 +45,6 @@
         <a href="{% url 'update-user' profile.pk %}" class="btn btn-primary m-2">Update</a>
         <a href="{% url 'dashboard' %}" class="btn btn-warning m-2">Back</a>
     </div>
+
 </div>
 {% endblock %}

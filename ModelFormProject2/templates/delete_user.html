@@ -5,7 +5,9 @@
 {% block content %}
 
   <div class="card p-4 mx-auto text-center" style="max-width: 420px;">
+
     <h2 class="mb-4">Delete User</h2>
+    
     <p>Are you sure you want to delete the user: <strong>{{ profile.username }}</strong>?</p>
     <form method="post">
       {% csrf_token %}

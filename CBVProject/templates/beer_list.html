@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h2>List of Beers</h2>
+<body style="background: #000; color: #fff; padding: 25px;">
+    <h2 style="text-align: center;">List of Beers</h2>
     <ul>
     {% for beer in beers %}
-        <li><a href="">{{ beer.name }}</a></li>
+        <li ><a href="" style="color: rgba(180, 180, 180, 0.53)">{{ beer.name }}</a></li>
     {% endfor %}
     </ul>
 </body>

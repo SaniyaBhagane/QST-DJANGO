@@ -7,9 +7,10 @@
 </head>
 <body style="background: #000; color: #fff; padding: 25px;">
     <h2 style="text-align: center;">List of Beers</h2>
-    <ul>
+    <hr>
+    <ul style="padding: 15px list-style-type: square; ">
     {% for beer in beers %}
-        <li ><a href="" style="color: rgba(180, 180, 180, 0.53)">{{ beer.name }}</a></li>
+        <li ><a href="/detail/{{beer.id}}" style="color: rgba(0, 213, 255, 0.94)">{{ beer.name }}</a></li>
     {% endfor %}
     </ul>
 </body>

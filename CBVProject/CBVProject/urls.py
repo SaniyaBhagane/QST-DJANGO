@@ -24,4 +24,7 @@ urlpatterns = [
     path ('template/', views.TemplateView.as_view(), name='template'),
     path('create/', views.AddBeer.as_view(), name='add-beer'),
     path('list/', views.BeerList.as_view(), name='list'),
+    path('detail/<int:pk>/', views.ViewBeer.as_view(), name='detail'),
+    path('update/<int:pk>/', views.UpdateBeer.as_view(), name='update'),
+    path('delete/<int:pk>/', views.DeleteBeer.as_view(), name='delete'),
 ]

@@ -3,10 +3,10 @@
 <head>
     <title>Add Beer</title>
 </head>
-<body style="text-align: center; background: #000; color: #fff; padding: 25px;">
-    <h3>Add Your Favourite Beer</h3>
-
-    <form method="post">
+<body style="background: #000; color: #fff; padding: 25px;">
+    <h2 style="text-align: center">Add Your Favourite Beer</h2>
+    <hr>
+    <form  style="padding: 15px" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>

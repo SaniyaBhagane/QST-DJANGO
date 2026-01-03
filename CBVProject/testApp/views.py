@@ -38,11 +38,23 @@ class AddBeer(CreateView):
     model = Beer
     fields = '__all__'
     template_name = 'beer_form.html'
-
-
     
 class BeerList(ListView):
     model = Beer
     context_object_name = 'beers'
     template_name = 'beer_list.html'
     
+class ViewBeer(DetailView):
+    model = Beer
+    context_object_name = 'beer'
+    template_name = 'beer_detail.html'
+    
+class UpdateBeer(UpdateView):
+    model = Beer
+    fields = '__all__'
+    template_name = 'beerUpdate_form.html'
+    
+class DeleteBeer(DeleteView):
+    model = Beer
+    success_url = '/list/'
+    template_name = 'beer_confirm_delete.html'

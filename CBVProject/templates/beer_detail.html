@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Details Page</title>
+</head>
+<body style="background: #000; color: #fff; padding: 25px;">
+    <h2 style="text-align: center;">Beer Details</h2>
+    <hr>
+    <pre style="padding: 15px">
+        <p><strong>Name:</strong> {{ beer.name }}</p>
+        <p><strong>Price:</strong> {{ beer.price }}</p>
+        <p><strong>Alcohol Content:</strong> {{ beer.alcohol_content }}</p>
+        <p><strong>Manufacture Date:</strong> {{ beer.mfg_date }}</p>
+    </pre>
+    <h5 style="padding: 15px">
+        <button><a href="/list/">Back to Beer List</a></button><br>
+        <button><a href="/update/{{ beer.pk }}">Update Beer</a></button><br>
+        <button><a href="/create"/>Add Beer</a></button><br>
+        <button><a href="/delete/{{ beer.pk }}">Delete Beer</a></button><br>
+    </h5>
+</body>
+</html>

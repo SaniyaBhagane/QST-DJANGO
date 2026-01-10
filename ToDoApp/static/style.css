@@ -1,0 +1,62 @@
+/* Global text */
+body {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+/* Card */
+.card {
+    background-color: #0f0f0f;
+    border-radius: 14px;
+}
+
+/* Table text visibility */
+.table-dark th,
+.table-dark td {
+    color: #eaeaea !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #1f1f1f;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+}
+
+/* Form inputs */
+input, textarea, select {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1px solid #444;
+}
+
+label {
+    color: #dcdcdc;
+}
+
+/* Placeholder */
+::placeholder {
+    color: #9e9e9e !important;
+}
+
+/* Buttons */
+.btn-outline-danger {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ff6b6b;
+    color: #000;
+}
+
+/* Links */
+a {
+    color: #0dcaf0;
+}
+
+a:hover {
+    color: #66e3ff;
+}

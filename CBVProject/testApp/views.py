@@ -43,7 +43,7 @@ class BeerList(ListView):
     model = Beer
     context_object_name = 'beers'
     template_name = 'beer_list.html'
-    
+     
 class ViewBeer(DetailView):
     model = Beer
     context_object_name = 'beer'

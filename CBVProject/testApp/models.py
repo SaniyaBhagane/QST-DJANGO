@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-# Choices tuple
 # cvbproject 
 TASTE_CHOICES = (
     ('Sweet', 'Sweet'),

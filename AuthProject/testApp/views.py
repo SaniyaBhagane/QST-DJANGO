@@ -1,10 +1,21 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.views.generic import View
-# Create your views here.
- 
-def NavView(request):
-    return render(request, 'navbar.html')
+# authproject1234
 
-# @login_re
-def pythonView(request):
-    return render(request, 'pyt.html')
+def home(request):
+    return render(request, 'home.html')
+
+
+@login_required
+def python_test(request):
+    return render(request, 'python.html')
+
+
+@login_required
+def java_test(request):
+    return render(request, 'java.html')
+
+
+@login_required
+def eyc_test(request):
+    return render(request, 'eyc.html')

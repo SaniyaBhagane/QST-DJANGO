@@ -1,13 +1,9 @@
-from django.shortcuts import render
+from django.urls import path
+from . import views
 
-def home(request):
-    return render(request, 'index.html')
-
-def python_test(request):
-    return render(request, 'python.html')
-
-def java_test(request):
-    return render(request, 'java.html')
-
-def eyc_test(request):
-    return render(request, 'eyc.html')
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('python/', views.python_test, name='python'),
+    path('java/', views.java_test, name='java'),
+    path('eyc/', views.eyc_test, name='eyc'),
+]

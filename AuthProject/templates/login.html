@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% block title %}Login | E-Test{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="content-box">
+
+            <h3 class="text-center text-info mb-4">Login to E-Test</h3>
+
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    Invalid username or password.
+                </div>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control bg-dark text-light border-secondary">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control bg-dark text-light border-secondary">
+                </div>
+
+                <button class="btn btn-outline-info w-100">
+                    Login
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

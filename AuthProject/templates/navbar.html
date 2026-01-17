@@ -3,78 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow"
-     style="background-color: #161b22;">
-    <div class="container-fluid">
+    <title>E-Test Platform</title>
 
-        <!-- Brand with Logo -->
-        <a class="navbar-brand d-flex align-items-center fw-bold text-info" href="/">
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
-            alt="Logo"
-            width="30"
-            height="24"
-            class="me-2">
-        TodoApp
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* ===== Navbar ===== */
+        .etest-navbar {
+            background: rgba(13, 17, 23, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .brand-highlight {
+            color: #58a6ff;
+        }
+
+        .nav-link {
+            position: relative;
+            margin: 0 10px;
+            font-weight: 500;
+            color: #c9d1d9 !important;
+        }
+
+        .nav-link:hover {
+            color: #58a6ff !important;
+        }
+
+        /* ===== Body ===== */
+        .content-wrapper {
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(135deg, #0d1117, #161b22);
+            padding: 40px 20px;
+            color: #c9d1d9;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            height: 100%;
+        }
+
+        .btn-start {
+            background: #58a6ff;
+            border: none;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .btn-start:hover {
+            background: #1f6feb;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark etest-navbar shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            E<span class="brand-highlight">-Test</span>
         </a>
 
-        <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar Content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <!-- Left Links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">
-                <i class="fa-solid fa-house me-1"></i> Home
-            </a>
-            </li>
-
-            <li class="nav-item">
-            <a class="nav-link" href="/create/">
-                <i class="fa-solid fa-plus me-1"></i> Add Task
-            </a>
-            </li>
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                More
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Completed Tasks</a></li>
-                <li><a class="dropdown-item" href="#">Pending Tasks</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">About App</a></li>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Python Test</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Java Test</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">EYC Test</a></li>
             </ul>
-            </li>
-        </ul>
-
-        <!-- Search -->
-        <form class="d-flex" role="search">
-            <input class="form-control me-2 bg-dark text-light border-secondary"
-                type="search"
-                placeholder="Search tasks"
-                aria-label="Search">
-            <button class="btn btn-outline-info" type="submit">
-            Search
-            </button>
-        </form>
-
         </div>
     </div>
-    </nav>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="content-wrapper">
+    <div class="container">
+
+        <!-- Welcome -->
+        <div class="content-box mb-4">
+            <h2>Welcome to E-Test Platform</h2>
+            <p>
+                Assess your technical skills through structured online tests.
+                Please read all instructions carefully before starting the exam.
+            </p>
+        </div>
+
+        <!-- Test Overview -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>📘 Python Test</h5>
+                    <p>MCQs + basic coding questions</p>
+                    <p><strong>Duration:</strong> 30 mins</p>
+                    <button class="btn btn-start w-100">Start Test</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>☕ Java Test</h5>
+                    <p>Core Java & OOP concepts</p>
+                    <p><strong>Duration:</strong> 30 mins</p>
+                    <button class="btn btn-start w-100">Start Test</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>🧠 EYC Test</h5>
+                    <p>Logical & aptitude questions</p>
+                    <p><strong>Duration:</strong> 20 mins</p>
+                    <button class="btn btn-start w-100">Start Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rules & Instructions -->
+        <div class="content-box">
+            <h4>📋 Exam Rules & Instructions</h4>
+            <ul>
+                <li>Each test has a fixed time limit.</li>
+                <li>Once started, the test cannot be paused.</li>
+                <li>Do not refresh or close the browser during the exam.</li>
+                <li>Each question carries equal marks unless specified.</li>
+                <li>Negative marking may apply for some tests.</li>
+                <li>Any unfair practice will result in disqualification.</li>
+                <li>Results will be displayed immediately after submission.</li>
+            </ul>
+
+            <hr>
+
+            <h5>⚠️ Important Notes</h5>
+            <ul>
+                <li>Ensure stable internet connection.</li>
+                <li>Use a laptop or desktop for best experience.</li>
+                <li>Read questions carefully before answering.</li>
+            </ul>
+        </div>
+
+    </div>
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

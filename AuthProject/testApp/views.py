@@ -5,5 +5,6 @@ from django.views.generic import View
 def NavView(request):
     return render(request, 'navbar.html')
 
+# @login_re
 def pythonView(request):
     return render(request, 'pyt.html')

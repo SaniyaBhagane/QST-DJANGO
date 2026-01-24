@@ -1,0 +1,26 @@
+{% extends "navbar.html" %}
+{% block title %}Logged Out | E-Test{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <div class="content-box">
+
+            <h3 class="text-info mb-3">You’ve been logged out 👋</h3>
+
+            <p class="mb-4">
+                Thanks for using <strong>E-Test</strong>.
+                See you again soon!
+            </p>
+
+            <a href="{% url 'login' %}" class="btn btn-outline-info me-2">
+                Login Again
+            </a>
+            <a href="{% url 'home' %}" class="btn btn-outline-light">
+                Go Home
+            </a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

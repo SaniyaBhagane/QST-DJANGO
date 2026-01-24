@@ -70,9 +70,13 @@
                     <a class="nav-link" href="{% url 'eyc' %}">EYC Test</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger" href="{% url 'logout' %}">
-                        Logout ({{ user.username }})
-                    </a>
+                    <form method="POST" action="{% url 'logout' %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-link btn btn-link text-danger p-0">
+                            Logout ({{ user.username }})
+                        </button>
+                    </form>
+
                 </li>
             {% else %}
                 <li class="nav-item">

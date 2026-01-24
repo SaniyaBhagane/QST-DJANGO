@@ -19,19 +19,28 @@
 
                 <div class="mb-3">
                     <label class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control bg-dark text-light border-secondary">
+                    <input type="text" name="username"
+                           class="form-control bg-dark text-light border-secondary">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control bg-dark text-light border-secondary">
+                    <input type="password" name="password"
+                           class="form-control bg-dark text-light border-secondary">
                 </div>
 
-                <button class="btn btn-outline-info w-100">
+                <button class="btn btn-outline-info w-100 mb-3">
                     Login
                 </button>
             </form>
 
+            <!-- 🔥 Sign Up link -->
+            <p class="text-center mt-3">
+                New to E-Test?
+                <a href="{% url 'signup' %}" class="text-info fw-semibold text-decoration-none">
+                    Sign up in seconds 🚀
+                </a>
+            </p>
         </div>
     </div>
 </div>

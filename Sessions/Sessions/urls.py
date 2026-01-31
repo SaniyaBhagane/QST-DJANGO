@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from testapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('pagecount/', views.page_count, name='page_count'),
 ]

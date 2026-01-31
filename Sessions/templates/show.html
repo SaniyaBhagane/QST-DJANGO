@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Show Mobiles</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h2>Saved Mobiles</h2>
+{% block title %}Show Mobiles{% endblock %}
 
-<ul>
+{% block content %}
+<h2>📄 Saved Mobiles</h2>
+
+{% if mobiles %}
     {% for mobile in mobiles %}
-        <li>{{ mobile.name }} - {{ mobile.contact }}</li>
-    {% empty %}
-        <li>No mobiles added yet</li>
+        <div class="card">
+            <div>
+                <strong>{{ mobile.name }}</strong><br>
+                📞 {{ mobile.contact }}
+            </div>
+            <a href="{% url 'delete' forloop.counter0 %}">
+                <button class="btn-danger">Delete</button>
+            </a>
+        </div>
     {% endfor %}
-</ul>
+{% else %}
+    <p style="text-align:center;">No mobiles added yet.</p>
+{% endif %}
 
-<a href="{% url 'add' %}">Add More</a>
-
-</body>
-</html>
+<br>
+<a href="{% url 'add' %}">➕ Add New</a>
+{% endblock %}

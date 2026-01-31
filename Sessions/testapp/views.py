@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 # Create your views here.
@@ -31,3 +31,10 @@ def add_mobile(request):
     else:
         form = ContactForm()
     return render(request, 'add.html', {'form': form})
+
+def delete_mobile(request, index):
+    mobiles = request.session.get('mobiles', [])
+    if index < len(mobiles):
+        mobiles.pop(index)
+        request.session['mobiles'] = mobiles
+    return redirect('show')

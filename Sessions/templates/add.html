@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Mobile</title>
-</head>
-<body>
-    <h2>Add Mobile</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-    <br>
-    <a href="{% url 'show' %}">Go to Show Page</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Add Mobile{% endblock %}
+
+{% block content %}
+<h2>➕ Add Mobile</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<br>
+<a href="{% url 'show' %}">← View Mobiles</a>
+{% endblock %}

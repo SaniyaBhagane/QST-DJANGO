@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Mobile Diary</h2>
-    
-    <a href="{% url 'show' %}">
-        <button>Show</button>
-    </a>
+{% extends 'base.html' %}
 
-    <a href="{% url 'add' %}">
-        <button>Add</button>
-    </a>
-</body>
-</html>
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>📱 Mobile Diary</h2>
+
+<div class="nav">
+    <a href="{% url 'show' %}">📄 Show</a>
+    <a href="{% url 'add' %}">➕ Add</a>
+</div>
+
+<p style="text-align:center; color:#555;">
+    Store mobile contacts using sessions
+</p>
+{% endblock %}

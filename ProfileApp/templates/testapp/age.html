@@ -6,10 +6,12 @@
     <title>age</title>
 </head>
 <body>
-    <form action="get">
-        <label for="">Enter your Age: </label>
-        <input type="number">
-        <button type="submit">Submit</button>
+    <h2>Enter Your Age</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="age" required>
+        <button type="submit">Next</button>
     </form>
 </body>
 </html>

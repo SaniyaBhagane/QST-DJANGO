@@ -6,9 +6,11 @@
     <title>Qualification</title>
 </head>
 <body>
-    <form action="get">
-        <label for="">Enter Your Qualification: </label>
-        <input type="text">
+    <h2>Enter Your Qualification</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="qualification" required>
         <button type="submit">Submit</button>
     </form>
 </body>

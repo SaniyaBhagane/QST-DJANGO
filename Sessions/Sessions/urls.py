@@ -21,6 +21,7 @@ from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pagecount/', views.page_count, name='page_count'),
+    path('', views.home, name='home'),
     path('show/', views.show_mobile, name='show'),
     path('add/', views.add_mobile, name='add'),
 ]

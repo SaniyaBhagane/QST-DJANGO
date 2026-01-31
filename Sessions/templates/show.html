@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Show Mobiles</title>
 </head>
 <body>
-    
+
+<h2>Saved Mobiles</h2>
+
+<ul>
+    {% for mobile in mobiles %}
+        <li>{{ mobile.name }} - {{ mobile.contact }}</li>
+    {% empty %}
+        <li>No mobiles added yet</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add' %}">Add More</a>
+
 </body>
 </html>
